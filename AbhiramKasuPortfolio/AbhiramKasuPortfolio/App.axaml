@@ -1,0 +1,29 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="AbhiramKasuPortfolio.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+  
+    <Application.Styles>
+        <FluentTheme />
+        
+    </Application.Styles>
+             <Application.Resources>
+                 <ResourceDictionary>
+                     <Color x:Key="DavysGray">#50514F</Color>
+                     <SolidColorBrush x:Key="DavysGrayBrush" Color="{StaticResource DavysGray}"/>
+            
+                     <Color x:Key="AshGray">#CBD4C2</Color>
+                     <SolidColorBrush x:Key="AshGrayBrush" Color="{StaticResource AshGray}"/>
+            
+                     <Color x:Key="Snow">#FFFCFF</Color>
+                     <SolidColorBrush x:Key="SnowBrush" Color="{StaticResource Snow}"/>
+            
+                     <Color x:Key="Cerulean">#247BA0</Color>
+                     <SolidColorBrush x:Key="CeruleanBrush" Color="{StaticResource Cerulean}"/>
+            
+                     <Color x:Key="Khaki">#C3B299</Color>
+                     <SolidColorBrush x:Key="KhakiBrush" Color="{StaticResource Khaki}"/>
+                 </ResourceDictionary>
+             </Application.Resources>
+</Application>

@@ -1,0 +1,73 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
+             xmlns:vm="clr-namespace:AbhiramKasuPortfolio.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:HomeViewModel"
+             x:Class="AbhiramKasuPortfolio.Views.HomeView">
+    <Design.DataContext>
+        <vm:HomeViewModel></vm:HomeViewModel>
+    </Design.DataContext>
+    
+    <UserControl.Background>
+        <LinearGradientBrush>
+            <GradientStop Offset=".5" Color="{StaticResource Khaki}"/>
+            <GradientStop Offset="1" Color="{StaticResource Cerulean}"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
+    
+    <Grid  RowDefinitions="Auto,*" ColumnDefinitions="1*,2*" Margin="10">
+        <Border  Grid.ColumnSpan="2" BorderBrush="White" BorderThickness="3" CornerRadius="10" Background="#96ffffff">
+            <Border.Effect>
+                <DropShadowEffect ></DropShadowEffect>
+            </Border.Effect>
+        <Grid Margin="25,0"  ColumnDefinitions="*,*">
+            <Label  Opacity=".7" FontWeight="Bold" FontSize="30" Foreground="Black" HorizontalAlignment="Center" Content="Abhiram Kasu">
+                
+            </Label>
+            
+            <Label Opacity=".7" VerticalAlignment="Center"  FontWeight="Bold" FontSize="30" Foreground="Black" HorizontalAlignment="Center"  Grid.Column="1"> Projects</Label>
+        </Grid>
+        </Border>
+       
+        <Border Opacity=".8" Margin="0,20" Padding="20" Grid.Column="0" Grid.Row="1" CornerRadius="20" Background="{StaticResource Cerulean}">
+            <Border.Effect>
+                <DropShadowEffect OffsetX="10" OffsetY="10"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel  Spacing="20" >
+            
+            <Label Foreground="Khaki" FontSize="25" FontWeight="SemiBold" >Hello 👋</Label>
+            <TextBlock Foreground="White" FontWeight="DemiBold" TextWrapping="Wrap">As a mainly .NET expirienced student, I am always excited to try new technologies and jump into unfomfortable situations</TextBlock>
+        </StackPanel>
+            
+        </Border>
+        <Border Opacity=".8" Margin="20,20" Padding="20" Grid.Column="1" Grid.Row="1" CornerRadius="20" Background="{StaticResource AshGray}">
+            <Border.Effect>
+                <DropShadowEffect OffsetX="10" OffsetY="10"></DropShadowEffect>
+            </Border.Effect>
+            <Grid RowDefinitions="Auto, *"  >
+                
+                
+            
+                <Label  Margin="10,0" Foreground="Khaki" FontSize="25" FontWeight="SemiBold" >Projects</Label>
+                <ProgressBar Grid.Row="1" IsVisible="{Binding GetReposCommand.IsRunning}" IsIndeterminate="True"></ProgressBar>
+                
+                <ListBox Grid.Row="1" Background="Transparent" ItemsSource="{Binding Repos}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="vm:Repo">
+                            <Border Padding="20" CornerRadius="10" Background="{DynamicResource Cerulean}">
+                                <StackPanel Orientation="Horizontal">
+                                    <i:Icon Value="fa-brand fa-github"></i:Icon>
+                                    <Label FontWeight="Bold" Content="{Binding Name}"></Label>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+        </Grid>
+            </Border>
+    </Grid>
+    
+</UserControl>
